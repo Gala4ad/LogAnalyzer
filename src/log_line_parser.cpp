@@ -9,7 +9,7 @@ std::optional<std::chrono::system_clock::time_point> LogParser::ParseDate(const 
 	std::tm tm = {};
 	std::stringstream ss(date);
 
-	ss >> std::get_time(&tm, "%Y %m %d %H:%M:%S");
+	ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");
 	if (ss.fail()) {
 		return std::nullopt;
 	}
@@ -26,6 +26,9 @@ std::optional<std::chrono::system_clock::time_point> LogParser::ParseDate(const 
 		catch (const std::invalid_argument&) {
 			return std::nullopt;
 		}
+	}
+	else {
+		return std::nullopt;
 	}
 
 	return time;
@@ -48,6 +51,8 @@ std::optional<LogEntry> LogParser::ParseLogLine(const std::string& line) {
 	auto parsed_date = LogParser::ParseDate(time_stamp);
 	if (parsed_date)
 		Entry.timestamp = (*parsed_date);
+	else
+		return std::nullopt;
 
 	//Parse thread id
 	start_pos = line.find('[', end_pos);

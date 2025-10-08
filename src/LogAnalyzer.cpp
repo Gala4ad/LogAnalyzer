@@ -22,10 +22,9 @@ bool LogAnalyzer::loadData(const std::string& fileName) {
 
 	while (std::getline(inFile, line)) {
 
-		nEntries++;
-
 		if(auto Parsed_Line = LogParser::ParseLogLine(line)){
 			if ((*Parsed_Line).function != "-") {
+				nEntries++;
 				funcCount[(*Parsed_Line).function]++;
 			}
 		}
