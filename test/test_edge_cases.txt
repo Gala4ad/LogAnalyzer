@@ -1,0 +1,8 @@
+[2025-09-30 13:10:34.153518] [15852] <INFO> property_package::Package::calculateGibbsEnergy
+[2025-09-30] [15852] <INFO> property_package::Package::calculateGibbsEnergy
+[abc] [15852] <INFO> property_package::Package::calculateGibbsEnergy
+[1233243] [15852] <INFO> property_package::Package::calculateGibbsEnergy
+[] [15852] <INFO> property_package::Package::calculateGibbsEnergy
+[2025-09-30] abc <INFO> property_package::Package::calculateGibbsEnergy
+
+[2025-09-30] [abc] <INFO> property_package::Package::calculateGibbsEnergy

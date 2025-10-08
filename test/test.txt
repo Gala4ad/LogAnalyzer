@@ -1,0 +1,12 @@
+[2025-09-30 13:10:34.153509] [15852] <INFO> property_package::Package::postprocessingFlash
+[2025-09-30 13:10:34.153510] [15852] <INFO> property_package::Package::calculateTemperaturePressureFlash T=298.15 P=465625
+[2025-09-30 13:10:34.153511] [15852] <INFO> property_package::Package::preprocessingFlash
+[2025-09-30 13:10:34.153512] [15852] <INFO> algorithm::flash::FlashTemperaturePressure::calculateTemperaturePressureFlash
+[2025-09-30 13:10:34.153518] [15852] <INFO> property_package::Package::calculateGibbsEnergy
+[2025-09-30 13:10:34.153520] [15852] <INFO> property_package::Package::calculateGibbsEnergy
+[2025-09-30 13:10:34.153534] [abc] <INFO> property_package::Package::calculateGibbsEnergy
+[2025-09-30 13:10:34.153535] [15852] <INFO> property_package::Package::calculateGibbsEnergy
+[2025-09-30 13:10:34.153535] 15852 INFO property_package::Package::calculateGibbsEnergy
+ [2025-09-30 13:10:34.153535] [15852] <INFO> property_package::Package::calculateGibbsEnergy
+[2025-09-30 13:10:34.154111] [15852] <INFO> -  Temperature = 298.15
+[2025-09-30 13:10:34.154111] [15852] <INFO> -  Pressure = 465625
