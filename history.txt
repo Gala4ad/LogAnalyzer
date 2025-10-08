@@ -1,0 +1,9 @@
+49bf3a1 test: added tests
+fb5715e fix: fixed issue with ParseDate
+cb7603e feat: added comments
+ceedf49 feat: added argparse support
+80f01ac feat: added loadData class
+1620bad feat: added log file parser
+96c78a8 feat: added LogEntry structure
+c145a6a feat: added project structure and CMakeList
+0e9a457 Initial commit
