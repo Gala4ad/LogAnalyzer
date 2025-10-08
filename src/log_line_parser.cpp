@@ -4,6 +4,7 @@
 #include <iomanip>
 
 
+//Ожидает формат: ГГГГ-ММ-ДД ЧЧ:ММ:СС.микросекунды]
 std::optional<std::chrono::system_clock::time_point> LogParser::ParseDate(const std::string& date) {
 	std::tm tm = {};
 	std::stringstream ss(date);
@@ -15,6 +16,7 @@ std::optional<std::chrono::system_clock::time_point> LogParser::ParseDate(const 
 
 	auto time = std::chrono::system_clock::from_time_t(std::mktime(&tm));
 
+	//Обработка микросекунд
 	size_t dot_pos = date.find('.');
 	if (dot_pos != std::string::npos) {
 		try {
@@ -29,6 +31,7 @@ std::optional<std::chrono::system_clock::time_point> LogParser::ParseDate(const 
 	return time;
 }
 
+//Ожидает формат строки: "[timestamp] [thread_id] <log_level> function_name payload_message
 std::optional<LogEntry> LogParser::ParseLogLine(const std::string& line) {
 	LogEntry Entry;
 
