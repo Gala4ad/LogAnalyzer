@@ -1,25 +1,25 @@
-#pragma once
+п»ї#pragma once
 #include "LogEntry.h"
 
 #include <optional>
 
 /**
-* @brief Парсит строку лог-файла.
+* @brief РџР°СЂСЃРёС‚ СЃС‚СЂРѕРєСѓ Р»РѕРі-С„Р°Р№Р»Р°.
 */
 class LogParser {
 public:
 
 	/**
-	* @brief Парсит строку с датой и временем.
-	* @param date Строка с датой и временем.
-	* @return Объект time_point, если парсинг успешен, иначе std::nullopt.
+	* @brief РџР°СЂСЃРёС‚ СЃС‚СЂРѕРєСѓ СЃ РґР°С‚РѕР№ Рё РІСЂРµРјРµРЅРµРј.
+	* @param date РЎС‚СЂРѕРєР° СЃ РґР°С‚РѕР№ Рё РІСЂРµРјРµРЅРµРј.
+	* @return РћР±СЉРµРєС‚ time_point, РµСЃР»Рё РїР°СЂСЃРёРЅРі СѓСЃРїРµС€РµРЅ, РёРЅР°С‡Рµ std::nullopt.
 	*/
 	static std::optional<std::chrono::system_clock::time_point> ParseDate(const std::string& date);
 
 	/**
-	* @brief Парсит строку лог-файла
-	* @param line строка лог-файла.
-	* @return Объект LogEntry, если парсинг успешен, иначе std::nullopt.
+	* @brief РџР°СЂСЃРёС‚ СЃС‚СЂРѕРєСѓ Р»РѕРі-С„Р°Р№Р»Р°
+	* @param line СЃС‚СЂРѕРєР° Р»РѕРі-С„Р°Р№Р»Р°.
+	* @return РћР±СЉРµРєС‚ LogEntry, РµСЃР»Рё РїР°СЂСЃРёРЅРі СѓСЃРїРµС€РµРЅ, РёРЅР°С‡Рµ std::nullopt.
 	*/
 	static std::optional<LogEntry> ParseLogLine(const std::string& line);
 };

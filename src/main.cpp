@@ -1,4 +1,4 @@
-#include "LogAnalyzer.h"
+ï»¿#include "LogAnalyzer.h"
 #include "log_line_parser.h"
 
 #include <cassert>
@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
 
     }
     catch (const std::exception& e) {
-        std::cerr << "Îøèáêà: " << e.what() << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ°: " << e.what() << std::endl;
         return 1;
     }
 

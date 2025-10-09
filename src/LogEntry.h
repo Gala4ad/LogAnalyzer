@@ -1,15 +1,15 @@
-#pragma once
+п»ї#pragma once
 #include <string>
 #include <chrono>
 #include <iostream>
 
 /**
-* @brief Хранит распарсенную строку.
+* @brief РҐСЂР°РЅРёС‚ СЂР°СЃРїР°СЂСЃРµРЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ.
 */
 struct LogEntry {
-	std::chrono::system_clock::time_point timestamp; ///< Дата и время.
-	int thread_id; ///< идентификатор потока-выполнения.
-	std::string log_level; ///< Уровень логирования.
-	std::string function; ///< Имя вызываемой функции или блока кода.
-	std::string payload; ///< Произвольный текст.
+	std::chrono::system_clock::time_point timestamp; ///< Р”Р°С‚Р° Рё РІСЂРµРјСЏ.
+	int thread_id; ///< РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РїРѕС‚РѕРєР°-РІС‹РїРѕР»РЅРµРЅРёСЏ.
+	std::string log_level; ///< РЈСЂРѕРІРµРЅСЊ Р»РѕРіРёСЂРѕРІР°РЅРёСЏ.
+	std::string function; ///< РРјСЏ РІС‹Р·С‹РІР°РµРјРѕР№ С„СѓРЅРєС†РёРё РёР»Рё Р±Р»РѕРєР° РєРѕРґР°.
+	std::string payload; ///< РџСЂРѕРёР·РІРѕР»СЊРЅС‹Р№ С‚РµРєСЃС‚.
 };

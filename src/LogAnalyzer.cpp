@@ -1,4 +1,4 @@
-#include "LogAnalyzer.h"
+﻿#include "LogAnalyzer.h"
 #include "log_line_parser.h"
 
 #include <charconv>
