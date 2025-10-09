@@ -41,11 +41,14 @@ int main(int argc, char* argv[]) {
             Logs.sortFunctions();
 
             if (statistic) {
+                Logs.getTotalEntries();
                 Logs.getStatistic();
                 Logs.getTopFunctions(top_count);
             }
-            else
+            else {
+                Logs.getTotalEntries();
                 Logs.getTopFunctions(top_count);
+            }
         }
 
     }

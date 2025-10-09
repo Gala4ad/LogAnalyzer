@@ -54,11 +54,13 @@ void LogAnalyzer::sortFunctions() {
 	std::sort(functionByFreq.begin(), functionByFreq.end(), compareByFrequency);
 }
 
-void LogAnalyzer::getStatistic() {
-
+void LogAnalyzer::getTotalEntries() {
 	std::cout << std::endl;
 	std::cout << "Total amount of entries: " << nEntries << std::endl;
 	std::cout << std::endl;
+}
+
+void LogAnalyzer::getStatistic() {
 	std::cout << "Number of entries by function: " << std::endl;
 
 	for (auto i: functionByFreq)
@@ -69,7 +71,6 @@ void LogAnalyzer::getStatistic() {
 
 void LogAnalyzer::getTopFunctions(int N) {
 
-	std::cout << std::endl;
 	if (functionByFreq.empty()) {
 		std::cout << "Functions in log file not foound " << std::endl;
 		return;
