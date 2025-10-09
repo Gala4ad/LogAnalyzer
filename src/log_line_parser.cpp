@@ -4,7 +4,7 @@
 #include <iomanip>
 
 
-//Ожидает формат: ГГГГ-ММ-ДД ЧЧ:ММ:СС.микросекунды]
+//Ожидает формат: [ГГГГ-ММ-ДД ЧЧ:ММ:СС.микросекунды]
 std::optional<std::chrono::system_clock::time_point> LogParser::ParseDate(const std::string& date) {
 	std::tm tm = {};
 	std::stringstream ss(date);
@@ -34,7 +34,7 @@ std::optional<std::chrono::system_clock::time_point> LogParser::ParseDate(const 
 	return time;
 }
 
-//Ожидает формат строки: "[timestamp] [thread_id] <log_level> function_name payload_message
+//Ожидает формат строки: "[timestamp] [thread_id] <log_level> ## function_name payload_message
 std::optional<LogEntry> LogParser::ParseLogLine(const std::string& line) {
 	LogEntry Entry;
 
@@ -73,16 +73,20 @@ std::optional<LogEntry> LogParser::ParseLogLine(const std::string& line) {
 	end_pos = line.find('>', start_pos);
 	if (end_pos == std::string::npos)
 		return std::nullopt;
-
 	Entry.log_level = line.substr(start_pos + 1, end_pos - start_pos - 1);
 
-
-	//parse function & payload
+	//skip "#<" or "#+"
 	start_pos = end_pos + 1;
 	if (start_pos > line.length())
 		return std::nullopt;
 
 	start_pos = line.find_first_not_of(' ', start_pos);
+	end_pos = line.find(' ', start_pos);
+	if (end_pos == std::string::npos)
+		return std::nullopt;
+
+	//parse function
+	start_pos = line.find_first_not_of(' ', end_pos);
 	if (start_pos == std::string::npos)
 		return std::nullopt;
 
@@ -95,7 +99,8 @@ std::optional<LogEntry> LogParser::ParseLogLine(const std::string& line) {
 
 		//parse payload
 		start_pos = line.find_first_not_of(' ', end_pos);
-		Entry.payload = line.substr(start_pos);
+		if (start_pos != std::string::npos)
+			Entry.payload = line.substr(start_pos);
 	}
 
 	return Entry;
